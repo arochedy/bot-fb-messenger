@@ -45,16 +45,17 @@ for (var i = 0; i < messaging_events.length; i++) {
 
 		sendTextMessage(sender, "Message reçu : " + text.substring(0, 200))
 		
+		}
+		
 		if (event.postback) {
         var text = JSON.stringify(event.postback)
-        sendTextMessage(sender, "Postback received: "+text.substring(0, 200), token)
+        sendTextMessage(sender, "Postback reçu : "+text.substring(0, 200), token)
         continue
       }
-
 		
-		
-		}
 	}
+	
+		
 	res.sendStatus(200)
 })
 
