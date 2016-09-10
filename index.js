@@ -43,7 +43,7 @@ for (var i = 0; i < messaging_events.length; i++) {
 	}
 	res.sendStatus(200)
 })
-var token = "EAAMG1ILZAy6YBAP8aYZAfY4vS6lKUklsoZAHYZBIwzr5yZA68T4XYbrOxKWrHB3Bom0XyZBNJVfbObXtU4IBw1MsJ3CSxfZCeOdW8hLeYch7Ea2z2RXFfTMG2y4RrLMeDrlcvzkMETZBChI3XEZBxqH6SZAdmMXkRVK2OLtezBOIg5pwZDZD";
+var token = "EAAMG1ILZAy6YBAE6iw5cVn3LPkTidqBtBNySYPVLVrxTFI9Gqq8hwnYqEwfCbZCob7vJzPlQCa3v0lZCVbmfcCCjfUey1qoFK5pAhv9Ket34W5zHsOO3fwe52m871dlTpnrWOo6ZAF6j5CHd6GZAuznJzcRbQ9Pd1gPRPZC4A7SgZDZD";
 
 function sendTextMessage(sender, text) {
     var messageText = { text:text }
