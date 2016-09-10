@@ -44,6 +44,15 @@ for (var i = 0; i < messaging_events.length; i++) {
 	            }
 
 		sendTextMessage(sender, "Message reçu : " + text.substring(0, 200))
+		
+		if (event.postback) {
+        var text = JSON.stringify(event.postback)
+        sendTextMessage(sender, "Postback received: "+text.substring(0, 200), token)
+        continue
+      }
+
+		
+		
 		}
 	}
 	res.sendStatus(200)
@@ -84,7 +93,7 @@ function sendCardMessage(sender) {
 	                    "buttons": [{
 	                        "type": "web_url",
 	                        "url": "https://www.messenger.com",
-	                        "title": "lien vers le site"
+	                        "title": "Visiter le site"
 	                    }, {
 	                        "type": "postback",
 	                        "title": "Postback",
