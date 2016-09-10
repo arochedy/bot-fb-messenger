@@ -40,17 +40,14 @@ for (var i = 0; i < messaging_events.length; i++) {
 		var text = event.message.text
             if (text === 'Cards') {
                 sendCardMessage(sender)
-	                continue
-	            }
-
-		sendTextMessage(sender, "Message reçu : " + text.substring(0, 200))
-		
-		}
-		
+	            continue
+	        }
+			sendTextMessage(sender, "Message reçu : " + text.substring(0, 200))		
+		}		
 		if (event.postback) {
-        var text = JSON.stringify(event.postback)
-        sendTextMessage(sender, "Postback reçu : "+text.substring(0, 200), token)
-        continue
+			var text = JSON.stringify(event.postback)
+			sendTextMessage(sender, "Postback reçu : "+text.substring(0, 200), token)
+			continue
       }
 		
 	}
@@ -90,7 +87,7 @@ function sendCardMessage(sender) {
                 "elements": [{
                     "title": "Premiere carte",
                     "subtitle": "Element 1 de la liste",
-	                    "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
+	                   // "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
 	                    "buttons": [{
 	                        "type": "web_url",
 	                        "url": "https://www.messenger.com",
@@ -103,7 +100,7 @@ function sendCardMessage(sender) {
 	                }, {
 	                    "title": "Deuxieme carte",
 	                    "subtitle": "Element numero 2 de la liste",
-	                    "image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
+	                   // "image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
 	                    "buttons": [{
 	                        "type": "postback",
 	                        "title": "Acheter",
