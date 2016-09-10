@@ -38,35 +38,16 @@ for (var i = 0; i < messaging_events.length; i++) {
 	var sender = event.sender.id
 	if (event.message && event.message.text) {
 		var text = event.message.text
-            if (text === 'Generic') {
-                sendGenericMessage(sender)
+            if (text === 'Cards') {
+                sendCardMessage(sender)
 	                continue
 	            }
 
-		sendTextMessage(sender, "Messag reçu : " + text.substring(0, 200))
+		sendTextMessage(sender, "Message reçu : " + text.substring(0, 200))
 		}
 	}
 	res.sendStatus(200)
 })
-app.post('/webhook/', function (req, res) {
-    var messaging_events = req.body.entry[0].messaging
-    for (var i = 0; i < messaging_events.length; i++) {
-        var event = req.body.entry[0].messaging[i]
-        var sender = event.sender.id
-        if (event.message && event.message.text) {
-            var text = event.message.text
-            if (text === 'Generic') {
-                sendGenericMessage(sender)
-	                continue
-	            }
-	            sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200))
-	        }
-	    }
-	    res.sendStatus(200)
-})
-
-
-
 
 var token = "EAAMG1ILZAy6YBAE6iw5cVn3LPkTidqBtBNySYPVLVrxTFI9Gqq8hwnYqEwfCbZCob7vJzPlQCa3v0lZCVbmfcCCjfUey1qoFK5pAhv9Ket34W5zHsOO3fwe52m871dlTpnrWOo6ZAF6j5CHd6GZAuznJzcRbQ9Pd1gPRPZC4A7SgZDZD";
 
@@ -90,7 +71,7 @@ function sendTextMessage(sender, text) {
 }
 
 
-function sendGenericMessage(sender) {
+function sendCardMessage(sender) {
     var messageData = {
         "attachment": {
             "type": "template",
@@ -98,25 +79,25 @@ function sendGenericMessage(sender) {
                 "template_type": "generic",
                 "elements": [{
                     "title": "Premiere carte",
-                    "subtitle": "Element #1 of an hscroll",
+                    "subtitle": "Element 1 de la liste",
 	                    "image_url": "http://messengerdemo.parseapp.com/img/rift.png",
 	                    "buttons": [{
 	                        "type": "web_url",
 	                        "url": "https://www.messenger.com",
-	                        "title": "web url"
+	                        "title": "lien vers le site"
 	                    }, {
 	                        "type": "postback",
 	                        "title": "Postback",
-	                        "payload": "Payload for first element in a generic bubble",
+	                        "payload": "Payload",
 	                    }],
 	                }, {
-	                    "title": "Second card",
-	                    "subtitle": "Element #2 of an hscroll",
+	                    "title": "Deuxieme carte",
+	                    "subtitle": "Element numero 2 de la liste",
 	                    "image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
 	                    "buttons": [{
 	                        "type": "postback",
 	                        "title": "Postback",
-	                        "payload": "Payload for second element in a generic bubble",
+	                        "payload": "Payload",
 	                    }],
 	                }]
 	            }
