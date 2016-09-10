@@ -1,9 +1,9 @@
 'use strict'
 
-const express = require('express')
-const bodyParser = require('body-parser')
-const request = require('request')
-const app = express()
+var express = require('express')
+var bodyParser = require('body-parser')
+var request = require('request')
+var app = express()
 
 app.set('port', (process.env.PORT || 5000))
 
@@ -32,21 +32,21 @@ app.listen(app.get('port'), function() {
 })
 
 app.post('/webhook/', function (req, res) {
-let messaging_events = req.body.entry[0].messaging
-for (let i = 0; i < messaging_events.length; i++) {
-	let event = req.body.entry[0].messaging[i]
-	let sender = event.sender.id
+var messaging_events = req.body.entry[0].messaging
+for (var i = 0; i < messaging_events.length; i++) {
+	var event = req.body.entry[0].messaging[i]
+	var sender = event.sender.id
 	if (event.message && event.message.text) {
-		let text = event.message.text
+		var text = event.message.text
 		sendTextMessage(sender, "Messag reçu : " + text.substring(0, 200))
 		}
 	}
 	res.sendStatus(200)
 })
-const token = "EAAMG1ILZAy6YBAP8aYZAfY4vS6lKUklsoZAHYZBIwzr5yZA68T4XYbrOxKWrHB3Bom0XyZBNJVfbObXtU4IBw1MsJ3CSxfZCeOdW8hLeYch7Ea2z2RXFfTMG2y4RrLMeDrlcvzkMETZBChI3XEZBxqH6SZAdmMXkRVK2OLtezBOIg5pwZDZD";
+var token = "EAAMG1ILZAy6YBAP8aYZAfY4vS6lKUklsoZAHYZBIwzr5yZA68T4XYbrOxKWrHB3Bom0XyZBNJVfbObXtU4IBw1MsJ3CSxfZCeOdW8hLeYch7Ea2z2RXFfTMG2y4RrLMeDrlcvzkMETZBChI3XEZBxqH6SZAdmMXkRVK2OLtezBOIg5pwZDZD";
 
 function sendTextMessage(sender, text) {
-    let messageText = { text:text }
+    var messageText = { text:text }
     request({
         url: 'https://graph.facebook.com/v2.6/me/messages',
         qs: {access_token:token},
@@ -61,7 +61,5 @@ function sendTextMessage(sender, text) {
 	        } else if (response.body.error) {
 	            console.log('Erreur: ', response.body.error)
 	        }
-	   // })
+	    })
 }
-
-
