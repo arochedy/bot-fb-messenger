@@ -107,7 +107,7 @@ function sendCardMessage(sender) {
 	                    "buttons": [{
 	                        "type": "postback",
 	                        "title": "Acheter",
-	                        "payload": "Clic sur la premiere carte",
+	                        "payload": "Clic sur la deuxieme carte",
 	                    }],
 	                }]
 	            }
