@@ -97,8 +97,8 @@ function sendCardMessage(sender) {
 	                        "title": "Visiter le site"
 	                    }, {
 	                        "type": "postback",
-	                        "title": "Postback",
-	                        "payload": "Payload",
+	                        "title": "Acheter",
+	                        "payload": "Clic sur la premiere carte",
 	                    }],
 	                }, {
 	                    "title": "Deuxieme carte",
@@ -106,8 +106,8 @@ function sendCardMessage(sender) {
 	                    "image_url": "http://messengerdemo.parseapp.com/img/gearvr.png",
 	                    "buttons": [{
 	                        "type": "postback",
-	                        "title": "Postback",
-	                        "payload": "Payload",
+	                        "title": "Acheter",
+	                        "payload": "Clic sur la premiere carte",
 	                    }],
 	                }]
 	            }
