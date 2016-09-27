@@ -56,7 +56,7 @@ for (var i = 0; i < messaging_events.length; i++) {
 	res.sendStatus(200)
 })
 
-var token = "EAAMG1ILZAy6YBAE6iw5cVn3LPkTidqBtBNySYPVLVrxTFI9Gqq8hwnYqEwfCbZCob7vJzPlQCa3v0lZCVbmfcCCjfUey1qoFK5pAhv9Ket34W5zHsOO3fwe52m871dlTpnrWOo6ZAF6j5CHd6GZAuznJzcRbQ9Pd1gPRPZC4A7SgZDZD";
+var token = "<PAGE_TOKEN>";
 
 function sendTextMessage(sender, text) {
     var messageText = { text:text }
